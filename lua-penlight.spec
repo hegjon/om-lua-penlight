@@ -15,7 +15,6 @@ Source0:	https://github.com/lunarmodules/Penlight/archive/%{version}/Penlight-%{
 BuildArch:	noarch
 BuildRequires:	lua >= %{luaver}
 BuildRequires:	lua-filesystem
-BuildRequires:	lua-markdown
 %if %{with docs}
 BuildRequires:	lua-ldoc
 %endif # with docs
@@ -65,11 +64,6 @@ cp -av lua/pl %{buildroot}%{luapkgdir}
 # fix scripts
 chmod -x %{buildroot}%{luapkgdir}/pl/dir.lua
 
-# build and install README etc.
-mkdir -p %{buildroot}%{_pkgdocdir}
-markdown.lua {README,CHANGELOG,CONTRIBUTING,LICENSE}.md
-cp -av {README,CHANGELOG,CONTRIBUTING}.html %{buildroot}%{_pkgdocdir}
-
 %if %{with docs}
 # build and install docs
 ldoc .
@@ -87,11 +81,10 @@ cp -av examples %{buildroot}%{_pkgdocdir}
 
 
 %files
-%dir %{_pkgdocdir}
 %license LICENSE.html
-%{_pkgdocdir}/README.html
-%{_pkgdocdir}/CHANGELOG.html
-%{_pkgdocdir}/CONTRIBUTING.html
+%doc README.md
+%doc CHANGELOG.md
+%doc CONTRIBUTING.md
 %{luapkgdir}/pl
 
 
