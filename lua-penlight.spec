@@ -2,6 +2,7 @@ Name:		lua-penlight
 Version:	1.13.1
 Release:	1
 Summary:	Penlight Lua Libraries
+Group:          Development/Other
 License:	MIT
 URL:		https://github.com/lunarmodules/Penlight
 Source0:	https://github.com/lunarmodules/Penlight/archive/%{version}/Penlight-%{version}.tar.gz
