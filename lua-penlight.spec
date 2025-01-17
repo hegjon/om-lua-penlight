@@ -70,9 +70,6 @@ ldoc .
 cp -av docs %{buildroot}%{_pkgdocdir}
 %endif # with docs
 
-# install examples
-cp -av examples %{buildroot}%{_pkgdocdir}
-
 
 %check
 # currently disabled: missing luacov
@@ -81,7 +78,7 @@ cp -av examples %{buildroot}%{_pkgdocdir}
 
 
 %files
-%license LICENSE.html
+%license LICENSE.md
 %doc README.md
 %doc CHANGELOG.md
 %doc CONTRIBUTING.md
@@ -95,4 +92,4 @@ cp -av examples %{buildroot}%{_pkgdocdir}
 
 
 %files examples
-%{_pkgdocdir}/examples
+%doc examples
