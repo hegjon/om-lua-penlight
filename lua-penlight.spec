@@ -10,7 +10,7 @@ Source0:	https://github.com/lunarmodules/Penlight/archive/%{version}/Penlight-%{
 %global luapkgdir %{_datadir}/lua/%{luaver}
 
 # there's a circular (build) dependency with lua-ldoc
-%bcond_without docs
+%bcond_with docs
 
 BuildArch:	noarch
 BuildRequires:	lua >= %{luaver}
